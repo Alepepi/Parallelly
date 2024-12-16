@@ -9,13 +9,13 @@
 import SwiftUI
 
 struct TodayView: View {
-    @State private var selectedDate = "MO"
+    @State private var selectedDate = "TU"
 
     let days = ["MO", "TU", "WE", "TH", "FR", "SA", "SU"]
     let dates = ["21", "22", "23", "24", "25", "26", "27", "28", "29"]
 
     var body: some View {
-        VStack(spacing: 10) {
+        VStack(alignment: .leading, spacing: 10) {
             HStack {
                 Button(action: {
                     // Action for list button
@@ -64,7 +64,47 @@ struct TodayView: View {
                 }
                 .padding(.horizontal)
             }
-            Spacer()
+                Text("Habits")
+                    .font(.title2)
+                    .bold()
+                    .foregroundColor(.white)
+
+            VStack() {
+                
+                HStack(spacing: 10)  {
+                    
+                    Image(systemName: "figure.walk")
+                        .foregroundColor(.white)
+                        .frame(width: 40, height: 40)
+                        .background(Circle().fill(Color.orange))
+                                        
+                    HStack() {
+                        Text("Walk")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                        
+                        Spacer()
+                        
+                    }
+                    VStack(alignment:.trailing){
+                        Text("5,860 steps")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                        Text("65%")
+                            .font(.subheadline)
+                            .foregroundColor(.white.opacity(0.8))
+                    }
+                }
+                .padding()
+                .background(Color.orange)
+                .frame(maxWidth: .infinity)
+                .cornerRadius(10)
+                .padding(.horizontal)
+                
+                
+                
+                Spacer()
+            }
         }
         .background(Color.black.edgesIgnoringSafeArea(.top))
     }
