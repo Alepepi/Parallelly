@@ -11,7 +11,7 @@ import SwiftUI
 struct ParallellyApp: App {
     var body: some Scene {
         WindowGroup {
-            TodayView()
+            CalendarView()
         }
     }
 }
